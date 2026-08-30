@@ -1,154 +1,150 @@
 .hero {
-  position: relative;
-  /* vh (not svh/dvh): ScrollTrigger measures the viewport with a 100vh probe div,
-     so every scroll-driven length here must use the same unit. */
-  height: 100vh;
-  overflow: hidden;
-  z-index: 1;
-  color: var(--color-text-white);
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    color: var(--color-text-white);
 }
 
 .heroImg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  border-radius: 0;
-  overflow: hidden;
-  background-color: #325b6d;
-
-  img {
-    object-fit: cover;
-  }
-}
-
-.heroTitleBox,
-.heroSubtitleBox {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  /* svh keeps the bottom-aligned copy clear of the mobile toolbar
-     while the frame itself stays 100vh tall. */
-  height: 100svh;
-  display: flex;
-  align-items: flex-end;
-  padding: var(--space-inset);
-}
-
-.heroTitleBox {
-  will-change: transform;
-}
-
-.heroTitle {
-  font-size: clamp(48px, 4.17vw, 80px);
-  letter-spacing: -0.05rem;
-  width: clamp(280px, 75vw, 1320px);
-}
-
-.heroSubtitle {
-  opacity: 0;
-  will-change: opacity;
-  width: clamp(280px, 50vw, 890px);
-  font-size: clamp(32px, 2.5vw, 48px);
-  letter-spacing: -0.05rem;
-}
-
-.about {
-  --about-text-width: clamp(280px, 40vw, 768px);
-  --about-gap: 2.5vw;
-  --about-img-size: 125px;
-
-  position: relative;
-  height: 100vh;
-  /* 275vh use with combination of "+=350%" in page.tsx */
-  margin-top: 275vh;
-}
-
-.aboutGrid {
-  display: grid;
-  grid-template-columns: auto auto minmax(0, var(--about-text-width)) auto auto;
-  grid-template-rows: 100%;
-  justify-content: space-between;
-  column-gap: var(--about-gap);
-  align-items: center;
-  justify-items: center;
-  width: 100%;
-  height: 100%;
-  padding: var(--space-inset);
-}
-
-.aboutCol {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
-  height: 125%;
-  will-change: transform;
-}
-
-.aboutImg {
-  width: var(--about-img-size);
-  height: var(--about-img-size);
-  border-radius: 10px;
-  position: relative;
-  overflow: hidden;
-
-  img {
-    object-fit: cover;
-  }
-}
-
-.aboutTitle {
-  grid-row: 1;
-  grid-column: 3;
-  width: var(--about-text-width);
-  font-size: clamp(32px, 2.5vw, 48px);
-  letter-spacing: -0.05rem;
-  text-align: center;
-}
-
-.outro {
-  position: relative;
-  height: 100vh;
-  background: var(--color-bg-alt);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.outroTitle {
-  font-size: clamp(32px, 2.5vw, 48px);
-  text-align: center;
-  letter-spacing: -0.05rem;
-  width: clamp(280px, 35vw, 662px);
-}
-
-@media (width <= 1000px) {
-  .about {
-    --about-text-width: 100%;
-    --about-gap: 0px;
-    --about-img-size: min(19.2vw, 75px);
-    --space-inset: 2rem;
-  }
-
-  .aboutGrid {
-    grid-template-columns: repeat(4, auto);
-  }
-
-  .aboutImg {
-    opacity: 0.25;
-    filter: saturate(0);
-  }
-
-  .aboutTitle {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    overflow: hidden;
+    background-color: #325b6d;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.heroTitleBox,
+.heroSubtitleBox {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100svh;
+    display: flex;
+    align-items: flex-end;
     padding: var(--space-inset);
-  }
+}
+
+.heroTitleBox {
+    will-change: transform;
+}
+
+.heroTitle {
+    font-size: clamp(48px, 4.17vw, 80px);
+    letter-spacing: -0.05rem;
+    width: clamp(280px, 75vw, 1320px);
+}
+
+.heroSubtitle {
+    opacity: 0;
+    will-change: opacity;
+    width: clamp(280px, 50vw, 890px);
+    font-size: clamp(32px, 2.5vw, 48px);
+    letter-spacing: -0.05rem;
+}
+
+.about {
+    --about-text-width: clamp(280px, 40vw, 768px);
+    --about-gap: 2.5vw;
+    --about-img-size: 125px;
+
+    position: relative;
+    height: 100vh;
+    /* 275vh use with combination of "+=350%" in page.tsx */
+    margin-top: 275vh;
+}
+
+.aboutGrid {
+    display: grid;
+    grid-template-columns: auto auto minmax(0, var(--about-text-width)) auto auto;
+    grid-template-rows: 100%;
+    justify-content: space-between;
+    column-gap: var(--about-gap);
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
+    padding: var(--space-inset);
+}
+
+.aboutCol {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 125%;
+    will-change: transform;
+}
+
+.aboutImg {
+    width: var(--about-img-size);
+    height: var(--about-img-size);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        object-fit: cover;
+    }
+}
+
+.aboutTitle {
+    grid-row: 1;
+    grid-column: 3;
+    width: var(--about-text-width);
+    font-size: clamp(32px, 2.5vw, 48px);
+    letter-spacing: -0.05rem;
+    text-align: center;
+}
+
+.outro {
+    position: relative;
+    height: 100vh;
+    background: var(--color-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.outroTitle {
+    font-size: clamp(32px, 2.5vw, 48px);
+    text-align: center;
+    letter-spacing: -0.05rem;
+    width: clamp(280px, 35vw, 662px);
+}
+
+@media (width <=1000px) {
+    .about {
+        --about-text-width: 100%;
+        --about-gap: 0px;
+        --about-img-size: min(19.2vw, 75px);
+        --space-inset: 2rem;
+    }
+
+    .aboutGrid {
+        grid-template-columns: repeat(4, auto);
+    }
+
+    .aboutImg {
+        opacity: 0.25;
+        filter: saturate(0);
+    }
+
+    .aboutTitle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: var(--space-inset);
+    }
 }
