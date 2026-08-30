@@ -1,6 +1,8 @@
 .hero {
   position: relative;
-  height: 100svh;
+  /* vh (not svh/dvh): ScrollTrigger measures the viewport with a 100vh probe div,
+     so every scroll-driven length here must use the same unit. */
+  height: 100vh;
   overflow: hidden;
   z-index: 1;
   color: var(--color-text-white);
@@ -25,7 +27,12 @@
 .heroTitleBox,
 .heroSubtitleBox {
   position: absolute;
-  inset: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  /* svh keeps the bottom-aligned copy clear of the mobile toolbar
+     while the frame itself stays 100vh tall. */
+  height: 100svh;
   display: flex;
   align-items: flex-end;
   padding: var(--space-inset);
@@ -55,9 +62,9 @@
   --about-img-size: 125px;
 
   position: relative;
-  height: 100svh;
-  /* 275svh use with combination of "+=350%" in page.tsx */
-  margin-top: 275svh;
+  height: 100vh;
+  /* 275vh use with combination of "+=350%" in page.tsx */
+  margin-top: 275vh;
 }
 
 .aboutGrid {
@@ -106,7 +113,7 @@
 
 .outro {
   position: relative;
-  height: 100svh;
+  height: 100vh;
   background: var(--color-bg-alt);
   display: flex;
   align-items: center;
